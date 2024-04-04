@@ -18,9 +18,9 @@ def enter(disp,touch):
     listg = displayio.Group()
     main.append(listg)
 
-    b = Button(x=80,y=190,width=40,height=30,name="X",label="Run",label_font=terminalio.FONT,label_color=0x00FF00,outline_color=0x0000FF,fill_color=0)
+    b = Button(x=80,y=190,width=40,height=30,name="X",label="Run",label_font=terminalio.FONT,label_color=0xFFFFFF,outline_color=0x00AAFF,fill_color=0)
     main.append(b)
-    c = Button(x=120,y=190,width=40,height=30,name="X",label="Close",label_font=terminalio.FONT,label_color=0x00FF00,outline_color=0x0000FF,fill_color=0)
+    c = Button(x=120,y=190,width=40,height=30,name="X",label="Close",label_font=terminalio.FONT,label_color=0xFFFFFF,outline_color=0x00AAFF,fill_color=0)
     main.append(c)
 
     plist = []
