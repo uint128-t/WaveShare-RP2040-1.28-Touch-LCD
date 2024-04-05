@@ -4,13 +4,14 @@ from adafruit_button import Button
 from adafruit_display_text import label
 
 name = "Statistics"
+root = displayio.Group()
+m = label.Label(terminalio.FONT,text="Please wait",scale=1,color=0x00FFFF)
+m.x = 0
+m.y = 65
+root.append(m)
+
 def enter(disp,touch):
-    root = displayio.Group()
     disp.root_group = root
-    m = label.Label(terminalio.FONT,text="Please wait",scale=1,color=0x00FFFF)
-    m.x = 0
-    m.y = 65
-    root.append(m)
     while True:
         point = touch.get_point()
         gesture = touch.get_gesture()
