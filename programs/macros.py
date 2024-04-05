@@ -1,11 +1,16 @@
-import displayio,board,terminalio,digitalio,macros
+import displayio,terminalio,macros
 from adafruit_button import Button
 from adafruit_display_text import label
+
+print("start")
 
 name="Macros"
 main = displayio.Group()
 listg = displayio.Group()
+print("groupsx")
 main.append(listg)
+
+print("groups")
 
 m = label.Label(terminalio.FONT,text="Macros",scale=2,color=0xFF00FF)
 m.anchored_position = (120,15)
@@ -22,6 +27,8 @@ b = Button(x=80,y=190,width=40,height=30,name="X",label="Run",label_font=termina
 main.append(b)
 c = Button(x=120,y=190,width=40,height=30,name="X",label="Close",label_font=terminalio.FONT,label_color=0xFFFFFF,outline_color=0x00AAFF,fill_color=0)
 main.append(c)
+
+print("ui")
 
 plist = []
 sel = None
@@ -62,3 +69,5 @@ def enter(disp,touch):
             while gst==0:
                 gst=touch.get_gesture()
             return
+        
+print("end")

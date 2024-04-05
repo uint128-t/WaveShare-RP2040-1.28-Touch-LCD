@@ -1,14 +1,21 @@
+print("what")
+
 from . import *
-import displayio,terminalio,cst816,gc9a01,board,microcontroller,gc,time
-from adafruit_button import Button
+import displayio,terminalio,board,microcontroller,gc,time
 from adafruit_display_text import label
+
+print("start")
 
 name = "Statistics"
 root = displayio.Group()
+print("group")
 m = label.Label(terminalio.FONT,text="Please wait",scale=1,color=0x00FFFF)
 m.x = 0
 m.y = 65
+print("lbl")
 root.append(m)
+
+print("ui")
 
 def enter(disp,touch):
     disp.root_group = root

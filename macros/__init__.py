@@ -1,9 +1,7 @@
 from . import *
 import os
 from adafruit_hid.keyboard import Keyboard
-from adafruit_hid.keycode import Keycode
 from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
-from time import sleep
 import usb_hid
 
 kbd = Keyboard(usb_hid.devices)
