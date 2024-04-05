@@ -6,12 +6,11 @@ from adafruit_display_shapes.rect import Rect
 from time import monotonic
 
 name = "Screensaver"
-root = displayio.Group()
-rect = Rect(0,0,240,30,fill=0x0000FF)
-root.append(rect)
 
 def enter(disp,touch):
-    disp.root_group = root
+    root = disp.root_group
+    rect = Rect(0,0,240,30,fill=0x0000FF)
+    root.append(rect)
     while True:
         rect.y+=1
         rect.y%=240

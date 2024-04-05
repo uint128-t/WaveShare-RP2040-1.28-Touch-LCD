@@ -4,10 +4,9 @@ from adafruit_button import Button
 from adafruit_display_text import label
 
 name = "CircuitPython Terminal"
-root = displayio.Group()
-root.append(displayio.CIRCUITPYTHON_TERMINAL)
 def enter(disp,touch):
-    disp.root_group = root
+    root = disp.root_group
+    root.append(displayio.CIRCUITPYTHON_TERMINAL)
     root.y = 0
     while True:
         point = touch.get_point()
@@ -18,3 +17,4 @@ def enter(disp,touch):
             break
         if press and (gesture==1 or gesture==2):
             disp.root_group.y+=distance.y_dist
+    root.pop()

@@ -8,7 +8,6 @@ for module in os.listdir("/programs"):
         continue
     print(f"load {module} (memory {gc.mem_free()} free)")
     exec(f"from . import {module[:-3]} as prgm") # fun
-    print("done")
     prgm.id = module[:-3]
     programs.append(prgm)
 

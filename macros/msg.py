@@ -1,6 +1,6 @@
 from . import *
 
-name = "Test"
+name = "Messagebox"
 def enter():
     kbd.send(Keycode.WINDOWS, Keycode.R)
     sleep(0.1)

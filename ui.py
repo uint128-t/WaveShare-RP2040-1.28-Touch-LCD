@@ -1,17 +1,11 @@
 import displayio,board,terminalio,busio,digitalio,gc9a01,programs,cst816
 from adafruit_button import Button
 from adafruit_display_text import label
+from displ import * # I want to use the variables but don't rerun the code??
 
-displayio.release_displays()
-
-spi = busio.SPI(clock=board.LCD_CLK, MOSI=board.LCD_DIN)
-display_bus = displayio.FourWire(spi, command=board.LCD_DC, chip_select=board.LCD_CS, reset=board.LCD_RST)
-display = gc9a01.GC9A01(display_bus, width=240, height=240, backlight_pin=board.LCD_BL)
 main = displayio.Group()
 display.root_group = main
 
-i2c = busio.I2C(board.GP7,board.GP6)
-touch = cst816.CST816(i2c)
 listg = displayio.Group()
 
 # load UI
@@ -63,6 +57,7 @@ while True:
         gst = 0
         while gst==0:
             gst=touch.get_gesture()
+        display.root_group = displayio.Group()
         sel.enter(display,touch) # program mainloop
         display.root_group = main
     # print("Position: {0},{1} - Gesture: {2} - Pressed? {3} - Distance: {4},{5}".format(point.x_point, point.y_point, gesture, press, distance.x_dist, distance.y_dist))
